@@ -1,0 +1,5 @@
+
+body { font-family: Arial; padding: 20px; }
+.nav { list-style: none; display: flex; gap: 10px; }
+.nav li { cursor: pointer; padding: 10px; background: #eee; }
+.tab { display: none; margin-top: 20px; }
