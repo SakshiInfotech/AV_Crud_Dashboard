@@ -1,1 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AV Data Entry Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username"/>
+    <input type="password" id="password" placeholder="Password"/>
+    <button onclick="login()">Login</button>
+    <p id="login-error"></p>
+  </div>
+
+  <div id="main-app" style="display:none;">
+    <ul class="nav">
+      <li onclick="showTab('dashboard')">Dashboard</li>
+      <li onclick="showTab('entry')">Data Entry</li>
+      <li onclick="showTab('update')">Data Update</li>
+      <li onclick="showTab('reports')">Reports</li>
+    </ul>
+
+    <div id="dashboard" class="tab">Dashboard content here...</div>
+    <div id="entry" class="tab">Data Entry form here...</div>
+    <div id="update" class="tab">Update Table...</div>
+    <div id="reports" class="tab">Report Summary here...</div>
+  </div>
+
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxzx_bjwDkvEhPQLheVHXdmwu6-GZ1zKF9gXmbDuRK7qajXDQylcWWayomz3D94slSmyQ/exec";
+    function showTab(tabId) {
+      document.querySelectorAll('.tab').forEach(el => el.style.display = 'none');
+      document.getElementById(tabId).style.display = 'block';
+    }
+  </script>
+  <script src="entryForm.js"></script>
+  <script src="bulkUpload.js"></script>
+  <script src="updateForm.js"></script>
+  <script src="reports.js"></script>
+</body>
+</html>
 <!-- HTML for Login Page -->
